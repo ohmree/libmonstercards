@@ -2,5 +2,8 @@
 #include "card.hpp"
 #include <map>
 
-Player::Player(unsigned health, unsigned mana, std::vector<Card::RefType> deck)
-    : _health(health), _mana(mana), _deck(deck){};
+Player::Player(int health, unsigned mana) : _health(health), _mana(mana){};
+unsigned int Player::mana() { return _mana; }
+unsigned int Player::mana(unsigned int new_mana) { return (_mana = new_mana); }
+int Player::health() { return _health; }
+int Player::health(int new_health) { return (_health = new_health); }

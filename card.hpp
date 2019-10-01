@@ -15,6 +15,7 @@ class Ability {
 public:
   Ability(std::function<void(Player &, Player &)> behavior, unsigned int cost);
   void operator()(Player &self, Player &other);
+  unsigned int cost();
 
 private:
   // TODO: maybe make this a reference,

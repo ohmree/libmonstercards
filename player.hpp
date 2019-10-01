@@ -8,15 +8,22 @@
 
 class Player {
 public:
-  Player(unsigned health = 10, unsigned mana = 5,
-         std::vector<Card::RefType> deck = std::vector<Card::RefType>());
+  Player(int health = 10, unsigned int mana = 5);
+  unsigned int mana();
+  unsigned int mana(unsigned int new_mana);
+  int health();
+  int health(int new_health);
 
 private:
-  unsigned _health;
-  unsigned _mana;
-  std::vector<Card::RefType> _deck;      // this is the player's complete deck
-  std::vector<Card::RefType> _hand;      // self-explanatory
-  std::vector<Card::RefType> _draw_pile; // this is the deck minus the hand
+  unsigned int _health;
+  unsigned int _mana;
+  // For now these seem out of this library's scope
+  // Clients can implement deck, hand and draw pile
+  // functionality easily and provide easier integration
+  // with their interface
+  // std::vector<Card::RefType> _deck;      // this is the player's complete
+  // deck std::vector<Card::RefType> _hand; // self-explanatory
+  // std::vector<Card::RefType> _draw_pile; // this is the deck minus the hand
 };
 
 #endif // ANIMO__PLAYER_HPP_
