@@ -32,6 +32,8 @@ public:
 
   void act(Player &self, Player &other);
   void react(Player &self, Player &other);
+  bool can_act(Player &self);
+  bool can_react(Player &self);
 
 private:
   Card();

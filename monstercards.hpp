@@ -6,10 +6,11 @@
 
 class Monstercards {
 public:
-  Monstercards(Player &p1, Player &p2, Player &starting)
-      : _player1(p1), _player2(p2), _current(starting);
+  Monstercards(Player &p1, Player &p2, Player &starting);
 
-  void turn(Card &play, std::optional<Card::RefType> reaction = std::nullopt);
+  void next_turn();
+  void make_play(Card &play,
+                 std::optional<Card::RefType> reaction = std::nullopt);
 
 private:
   Player &_player1, &_player2;
